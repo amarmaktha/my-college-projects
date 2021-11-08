@@ -86,6 +86,41 @@
     &emsp;&emsp;<img src="howto.jpg"width=121px alt="how to...">
     <h3>&emsp;&emsp;price-INR 89</h3>
     &emsp;&emsp;<a href="https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034" target="_blank">  ORDER NOW</a>
-
+ <script>
+        let items =[
+     
+     [295,        81,       630],//this is row 0
+     [129,        162,      744],//this is row 1
+     [502,        344,       89] //this is row 2
+   //cullom 0   cullom 1   cullom2
+   ];
+   function billgenerate()
+   {
+        category=document.getElementById("category").value;
+        book=document.getElementById("bookno").value;
+        bookid=items[category-1][book-1];
+        quant=document.getElementById("quantity").value;
+        document.getElementById("totalvalue").innerHTML=bookid*quant;
+   }
+     
+   
+    
+  </script>
+  <form>
+        <label>Enter the book category</label>
+        <input type="text" id="category">
+        <br>
+        <label>Enter the book</label>
+        <input type="text" id="bookno">
+        <br>
+        <label>quantity of book</label>
+        <input type="text" id="quantity">
+        <br>
+        <input type="button" onclick="billgenerate()" value="total">
+  </form>
+      <p>
+          Total Bill To Pay=<br>
+          <span id="totalvalue"></span>
+      </p>
 </body>
 </html>
